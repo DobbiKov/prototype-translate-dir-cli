@@ -1,0 +1,9 @@
+[package]
+name = "translate-dir-cli"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.4.0", features = ["derive"] }
+glob = "0.3.2"
+translate-dir-lib = {path="../translate-dir-lib", features=["cli_support"]}
