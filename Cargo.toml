@@ -6,4 +6,4 @@ edition = "2024"
 [dependencies]
 clap = { version = "4.4.0", features = ["derive"] }
 glob = "0.3.2"
-translate-dir-lib = {path="../translate-dir-lib", features=["cli_support"]}
+translate-dir-lib = {path="../prototype-translate-dir-lib", features=["cli_support"]}

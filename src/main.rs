@@ -45,6 +45,7 @@ enum ProjectAction {
         #[clap(value_enum)]
         language: Language,
     },
+    Update,
     Sync,
 
     /// Marks one or more files/patterns in the source directory as translatable.
@@ -263,6 +264,13 @@ fn handle_project_action(
             Ok(_) => println!("Successfully removed target language {:?}", language),
             Err(e) => {
                 eprintln!("Error removing target language: {}", e);
+                exit(1);
+            }
+        },
+        ProjectAction::Update => match proj.update_project_structure() {
+            Ok(_) => println!("Successfully updated the source directory structure."),
+            Err(e) => {
+                eprintln!("Error updating the source directory structure: {}", e);
                 exit(1);
             }
         },
